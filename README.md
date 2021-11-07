@@ -6,9 +6,9 @@ NW AutoFishing is a fully automatic program to fish in New World, using image re
 
 - Switch to the "fishing stance"
 - Equip a bait if desired or expired
-- Cast to a custom distance (seconds)
+- Cast to a custom distance (in seconds)
 - Reel the most effective way possible
-- Skip the uncommon animation
+- Skip the "uncommon fish" animation
 - Repair at custom number of casts
 
 ### Built with
