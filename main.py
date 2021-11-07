@@ -4,7 +4,7 @@ from get_window import *
 
 ## VARS ##
 # CAST #
-CAST_TIME = random.uniform(1.7, 1.9)    # cast with random strength (1.9 for MAX)
+CAST_TIME = random.uniform(1.7, 1.9)    # cast with random strength (1.9 for MAX range)
 # REPAIR #
 REPAIR_COUNT = 0
 CASTS_TO_REPAIR = 60
