@@ -5,11 +5,11 @@ NW AutoFishing is a fully automatic program to fish in New World, using image re
 ### Features
 
 - Switch to the "fishing stance"
-- Equip a bait if desired or expired
+- Equip a bait if desired and when it's expired
 - Cast to a custom distance (in seconds)
-- Reel the most effective way possible
 - Skip the "uncommon fish" animation
-- Repair at custom number of casts
+- Repair at custom number of casts (lower the number of casts to avoid the AFK detection)
+- Reel the most effective way possible
 
 ### Built with
 
@@ -22,6 +22,14 @@ NW AutoFishing is a fully automatic program to fish in New World, using image re
 You'll need Python3 to run.
 
 The images have been taken with a 1920*1080 resolution, so you should use the same resolution to avoid any errors.
+
+The keystrokes are set to default, which are the following:
+> E -> Use
+> R -> Repair
+> TAB -> Inventory
+> leftALT -> Lock the camera
+> F3 -> Switch to "fishing stance"
+
 
 ### Configure
 
