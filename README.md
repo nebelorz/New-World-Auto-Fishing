@@ -24,11 +24,11 @@ You'll need Python3 to run.
 The images have been taken with a 1920*1080 resolution, so you should use the same resolution to avoid any errors.
 
 The keystrokes are set to default, which are the following:
-> E -> Use  
-> R -> Repair  
-> TAB -> Inventory  
+> E       -> Use  
+> R       -> Repair  
+> TAB     -> Inventory  
+> F3      -> Switch to "fishing stance"  
 > leftALT -> Lock the camera  
-> F3 -> Switch to "fishing stance"  
 
 
 ### Configure
