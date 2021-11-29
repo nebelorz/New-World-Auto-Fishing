@@ -4,13 +4,14 @@ from get_window import *
 
 ## VARS ##
 # CAST
-CAST_TIME = random.uniform(1.7, 1.9)    #cast with random strength (1.9 for MAX)
-# REPAIR
+CAST_TIME = random.uniform(1.7, 1.9)    # cast with random strength (1.9 for MAX)
 
+# REPAIR
 REPAIR_COUNT = 0
-CASTS_TO_REPAIR = 30 #A low number of casts avoid the AFK detection
-# BAIT
-SET_BAIT = None #None or True
+CASTS_TO_REPAIR = 30    # A low number of casts avoid the AFK detection
+
+# BAIT (None or True)
+SET_BAIT = None
 
 
 if check_window('New World') == True:
