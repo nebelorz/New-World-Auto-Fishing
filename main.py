@@ -3,13 +3,14 @@ from functions import *
 from get_window import *
 
 ## VARS ##
-# CAST #
-CAST_TIME = random.uniform(1.7, 1.9)    # cast with random strength (1.9 for MAX)
-# REPAIR #
+# CAST
+CAST_TIME = random.uniform(1.7, 1.9)    #cast with random strength (1.9 for MAX)
+# REPAIR
+
 REPAIR_COUNT = 0
-CASTS_TO_REPAIR = 30 # Low number of casts to avoid the AFK detection
-# BAIT #
-SET_BAIT = None # None or True || You only have to have one type of bait type (salt or fresh water) in your inventory, in order to have it correctly positioned at the bait menu.
+CASTS_TO_REPAIR = 30 #A low number of casts avoid the AFK detection
+# BAIT
+SET_BAIT = None #None or True
 
 
 if check_window('New World') == True:

@@ -62,7 +62,7 @@ def repair():
     position = pyAG.locateCenterOnScreen('images/f3_inventory.png', confidence = 0.7, grayscale = True)
 
     if position != None:
-        pyDI.moveTo((position[0] - 50), position[1]) # mouse on fishing rod slot
+        pyDI.moveTo((position[0] - 50), position[1]) # mouse to fishing rod slot
         time.sleep(1)
         pyDI.keyDown('r')
         pyDI.click()
