@@ -4,16 +4,13 @@ NW AutoFishing is a fully automatic program to fish in New World, using image re
 
 ### Features
 
+- Anti AFK disconnection
 - Switch to the "fishing stance"
 - Equip a bait if desired and when it's expired
-- Cast to a custom distance (in seconds)
+- Cast to a custom distance
 - Skip the "uncommon fish" animation
-- Repair at custom number of casts (lower the number of casts to avoid the AFK detection)
+- Repair at custom number of casts
 - Reel the most effective way possible
-
-### Built with
-
-- Python
 
 ## Getting started
 
@@ -23,20 +20,22 @@ You'll need Python3 to run.
 
 The images have been taken with a 1920*1080 resolution, so you should use the same resolution to avoid any errors.
 
-The keystrokes are set to default, which are the following:
+The key bindings in-game are set to default, which are the following and the only ones used:
 ~~~
 E       -> Use  
+Space   -> Jump  
 R       -> Repair  
 TAB     -> Inventory  
-leftALT -> Lock the camera  
+Enter   -> Opens the chat
 F3      -> Switch to "fishing stance"  
+leftALT -> Lock the camera (free look)  
 ~~~
 
-### Configure
+### Set up
 
-Configure the settings at "main.py"
-<div align="left">
+Configure the settings at "main.py" and run it
+<div>
   <kbd>
-    <img src="https://i.imgur.com/V4cP95w.png" />
+    <img src="https://i.imgur.com/5D96rFq.png" />
   </kbd>
 </div>

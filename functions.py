@@ -2,27 +2,18 @@ import time
 import pyautogui as pyAG
 import pydirectinput as pyDI
 
-def check_drawn_pole():
-    drawn_pole = pyAG.locateOnScreen('images/f3_fishing.png', confidence = 0.7, grayscale = True)
-    if drawn_pole == None:
-        pyDI.press('f3')
-        time.sleep(1.5)
+def time_stamp():
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+    print(current_time)
 
+# Casts the fishing pole
 def cast_fishing(self):
     pyDI.mouseDown(button='left')
     time.sleep(self)
     pyDI.mouseUp(button='left')
 
-def check_cast_fishing():
-    time.sleep(5)
-    fishing_casted = pyAG.locateOnScreen('images/fishing_casted.png', confidence = 0.7, grayscale = True)
-    if fishing_casted == None:
-        print('No bubble cast found on screen.')
-        return(False)
-    else:
-        print('Bubble cast found')
-        return(True)
-
+# Waits until a fish is caught
 def catch_fish():
     while True:
         fish_caught = pyAG.locateOnScreen('images/fish_caught.png', confidence = 0.9, grayscale = True)
@@ -33,6 +24,7 @@ def catch_fish():
             print('[OK] FISH CAUGHT')
             break
 
+# Pickups the reel
 def pick_up_reel():
     while True:
         pyDI.keyDown('alt')
@@ -41,8 +33,9 @@ def pick_up_reel():
         stop = pyAG.locateOnScreen('images/f3_fishing.png', confidence = 0.9, grayscale = True)
         
         if stop != None:
+            time.sleep(0.25)
             pyDI.keyUp('alt')
-            time.sleep(0.5)
+            time.sleep(0.50)
             break
         elif reel_on_screen == None:
             pyDI.click()
@@ -55,6 +48,7 @@ def pick_up_reel():
             time.sleep(1)
             continue
 
+# Repair the fishing pole
 def repair():
     time.sleep(0.5)
     pyDI.press('tab')
@@ -62,7 +56,7 @@ def repair():
     position = pyAG.locateCenterOnScreen('images/f3_inventory.png', confidence = 0.7, grayscale = True)
 
     if position != None:
-        pyDI.moveTo((position[0] - 50), position[1]) # mouse to fishing rod slot
+        pyDI.moveTo((position[0] - 50), position[1]) #mouse to rod slot
         time.sleep(1)
         pyDI.keyDown('r')
         pyDI.click()
@@ -70,18 +64,12 @@ def repair():
         time.sleep(1)
         pyDI.press('e')
         pyDI.press('tab')
-        time.sleep(2)
+        time.sleep(1)
         print('[OK] FISHING POLE REPAIRED')
     else:
         print('Fishing pole not detected (?)')
 
-def check_bait():
-    no_bait = pyAG.locateCenterOnScreen('images/no_bait.png', confidence = 0.7, grayscale = True)
-    if no_bait != None:
-        return(True)
-    else:
-        return(False)
-
+# Sets a bait
 def set_bait():
     no_bait = pyAG.locateCenterOnScreen('images/no_bait.png', confidence = 0.7, grayscale = True)
     if no_bait != None:
@@ -94,12 +82,18 @@ def set_bait():
         pyDI.click()
         time.sleep(0.25)
         pyDI.moveTo((bait_pos[0] + 330), bait_pos[1] + 580)
-        time.sleep(0.50)
+        time.sleep(0.5)
         pyDI.click()
         time.sleep(2.50)
         print('[OK] BAIT ATTACHED')
 
-def time_stamp():
-    t = time.localtime()
-    current_time = time.strftime("%H:%M:%S", t)
-    print(current_time)
+# Anti AFK
+def anti_afk():
+    pyDI.press('enter')
+    time.sleep(0.25)
+    pyAG.write('/sit')
+    time.sleep(0.25)
+    pyDI.press('enter')
+    time.sleep(1.5)
+    pyDI.press('space')
+    time.sleep(0.5)

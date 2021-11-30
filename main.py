@@ -1,14 +1,15 @@
 import random
 from functions import *
+from check_functions import *
 from get_window import *
 
 ## VARS ##
 # CAST
-CAST_TIME = random.uniform(1.7, 1.9)    # cast with random strength (1.9 for MAX)
+CAST_TIME = random.uniform(1.7, 1.9)    #cast with random strength (1.9 for MAX)
 
 # REPAIR
 REPAIR_COUNT = 0
-CASTS_TO_REPAIR = 30    # A low number of casts avoid the AFK detection
+CASTS_TO_REPAIR = 60    #casts until the fishing rod is repaired
 
 # BAIT (None or True)
 SET_BAIT = None
@@ -22,10 +23,16 @@ if check_window('New World') == True:
         check_drawn_pole()
         if REPAIR_COUNT >= CASTS_TO_REPAIR:
             repair()
-            REPAIR_COUNT = 0    
+            REPAIR_COUNT = 0
+        elif check_afk() == False:
+            anti_afk()
         else:
             if SET_BAIT == True and check_bait() == True:
-                set_bait()
+                try:
+                    set_bait()
+                except:
+                    SET_BAIT == None
+                    print("[ERROR] Bait not found")
             
             cast_fishing(CAST_TIME)
 
