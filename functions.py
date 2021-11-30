@@ -96,4 +96,4 @@ def anti_afk():
     pyDI.press('enter')
     time.sleep(1.5)
     pyDI.press('space')
-    time.sleep(0.5)
+    time.sleep(1.5)

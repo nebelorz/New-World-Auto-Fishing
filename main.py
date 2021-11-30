@@ -1,4 +1,5 @@
 import random
+
 from functions import *
 from check_functions import *
 from get_window import *
@@ -24,7 +25,7 @@ if check_window('New World') == True:
         if REPAIR_COUNT >= CASTS_TO_REPAIR:
             repair()
             REPAIR_COUNT = 0
-        elif check_afk() == False:
+        elif check_afk() == True:
             anti_afk()
         else:
             if SET_BAIT == True and check_bait() == True:
