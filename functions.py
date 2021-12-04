@@ -10,6 +10,10 @@ def time_stamp(self):
     print("\n//", current_time, "LOOP#", self, "//")
     time.sleep(0.25)
 
+def casts_left_to_repair(casts_repair, casts_count):
+    if (casts_repair - casts_count != 0):
+        print('[INFO] Casts until next repair: ', (casts_repair - casts_count))
+
 def cursor_to_center():
     screenWidth, screenHeight = pyAG.size()
     pyAG.moveTo(screenWidth/2, screenHeight/2)
@@ -41,18 +45,18 @@ def pick_up_reel():
         
         if stop != None:
             pyDI.keyUp((key_bindings.FREE_LOOK))
-            time.sleep(0.15)
+            time.sleep(0.25)
             break
         elif reel_on_screen == None:
             pyDI.click()
-            time.sleep(0.50)
+            time.sleep(0.25)
             continue
         elif max_reel != None:
             pyDI.mouseDown()
             continue
         elif max_reel == None:
             pyDI.mouseUp()
-            time.sleep(0.75)
+            time.sleep(0.50)
             continue
 
 # Repair the fishing pole

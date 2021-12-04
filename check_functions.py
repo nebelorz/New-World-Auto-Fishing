@@ -9,7 +9,7 @@ def check_drawn_pole():
     drawn_pole = pyAG.locateOnScreen('images/f3_fishing.png', confidence = 0.7, grayscale = True)
     if drawn_pole == None:
         pyDI.press((key_bindings.FISHING_MODE))
-        time.sleep(1.5)
+        time.sleep(1)
 
 # Checks for the fishing bubble
 def check_cast_fishing():

@@ -32,8 +32,7 @@ if check_window('New World') == True:
                 
                 REPAIR_COUNT += 1
                 LOOP_COUNT += 1
-                if (settings.CASTS_TO_REPAIR - REPAIR_COUNT != 0):
-                    print('[INFO] Casts until next repair: ', (settings.CASTS_TO_REPAIR - REPAIR_COUNT))
+                casts_left_to_repair(settings.CASTS_TO_REPAIR, REPAIR_COUNT)
                 continue
             else:
                 continue
