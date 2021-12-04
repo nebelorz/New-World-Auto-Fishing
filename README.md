@@ -1,4 +1,4 @@
-# NW AutoFishing
+# Description
 
 New-World-Auto-Fishing is a fully automatic program to fish in New World, using mouse and keyboard inputs and image recognition.
 <div>
@@ -28,6 +28,9 @@ The images have been taken with a 1920*1080 resolution, so you should use the sa
 ### Console LOG 🔴
 The "console.bat" displays useful information like how many casts made so far, casts until next repair and successfully completion of steps.  
 If you have a second monitor you should drag it there, if not, I reccommend using [AutoHotkey](https://www.autohotkey.com/) but any of [these](https://www.howtogeek.com/196958/the-3-best-ways-to-make-a-window-always-on-top-on-windows/) methods will work.  
+
+### Anti-AFK 🔴
+The Anti-AFK function will write the /sit command and then jump, so keep in mind that **if you're too deep into water its not possible to jump and you may die due running out of air.**
 
 ### Key Bindings 🔴
 The key bindings in-game are set to default, but you can change them at "config.py" file.  
