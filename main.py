@@ -20,7 +20,7 @@ if check_window('New World') == True:
             anti_afk()
         else:
             time_stamp(LOOP_COUNT)
-            
+
             if check_drawn_pole() == False:
                 enter_fishing_stance()
 
@@ -32,7 +32,7 @@ if check_window('New World') == True:
             if check_cast_fishing() == True:
                 catch_fish()
                 pick_up_reel()
-                
+                 
                 REPAIR_COUNT += 1
                 LOOP_COUNT += 1
                 casts_left_to_repair(settings.CASTS_TO_REPAIR, REPAIR_COUNT)

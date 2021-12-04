@@ -50,7 +50,7 @@ def pick_up_reel():
         
         if stop != None:
             pyDI.keyUp((key_bindings.FREE_LOOK))
-            time.sleep(0.25)
+            time.sleep(0.75)
             break
         elif reel_on_screen == None:
             pyDI.click()

@@ -16,12 +16,13 @@ def check_cast_fishing():
         fishing_casted = pyAG.locateOnScreen('images/fishing_casted.png', confidence = 0.7, grayscale = True)
         for i in range(3):
             if fishing_casted == None:
-                print('... waiting to land the line #{}'.format(i))
+                print('... waiting to land the line ...')
                 time.sleep(1.5)
                 continue
             else:
                 print('[OK] LURE CAST FOUND')
                 return(True)
+        print('[INFO] LOOP RESTARTING (LURE NOT FOUND)')
         break
 
 # Checks if a bait is attached
