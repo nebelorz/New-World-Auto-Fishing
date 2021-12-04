@@ -1,6 +1,12 @@
 # NW AutoFishing
 
 New-World-Auto-Fishing is a fully automatic program to fish in New World, using mouse and keyboard inputs and image recognition.
+<div>
+  <kbd>
+    <img src="https://i.imgur.com/hKSGdZr.png"
+    width=800/>
+  </kbd>
+</div>
 
 ## Features ⚙
 - Anti AFK disconnection

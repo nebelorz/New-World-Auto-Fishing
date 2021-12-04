@@ -20,7 +20,10 @@ if check_window('New World') == True:
             anti_afk()
         else:
             time_stamp(LOOP_COUNT)
-            check_drawn_pole()
+            
+            if check_drawn_pole() == False:
+                enter_fishing_stance()
+
             if settings.SET_BAIT == True and check_bait() == True:
                 set_bait()
         

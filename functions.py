@@ -18,6 +18,11 @@ def cursor_to_center():
     screenWidth, screenHeight = pyAG.size()
     pyAG.moveTo(screenWidth/2, screenHeight/2)
 
+# Change to "fishing stance"
+def enter_fishing_stance():
+    pyDI.press((key_bindings.FISHING_MODE))
+    time.sleep(1.25)
+
 # Casts the fishing pole
 def cast_fishing(self):
     pyDI.mouseDown(button='left')
@@ -31,7 +36,7 @@ def catch_fish():
         if fish_caught == None:
             continue
         else:
-            pyDI.click()
+            pyDI.click(button='left')
             print('[OK] FISH CAUGHT')
             break
 

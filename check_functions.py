@@ -1,25 +1,28 @@
 import time
 import pyautogui as pyAG
-import pydirectinput as pyDI
-
-from config import key_bindings
 
 # Checks if the fishing pole is drawn, if not, pulls it out
 def check_drawn_pole():
     drawn_pole = pyAG.locateOnScreen('images/f3_fishing.png', confidence = 0.7, grayscale = True)
     if drawn_pole == None:
-        pyDI.press((key_bindings.FISHING_MODE))
-        time.sleep(1)
+        return(False)
+    else:
+        return(True)
 
 # Checks for the fishing bubble
 def check_cast_fishing():
     while True:
+        time.sleep(3.5)
         fishing_casted = pyAG.locateOnScreen('images/fishing_casted.png', confidence = 0.7, grayscale = True)
-        if fishing_casted == None:
-            continue
-        else:
-            print('[OK] BUBBLE CAST FOUND')
-            return(True)
+        for i in range(3):
+            if fishing_casted == None:
+                print('... waiting to land the line #{}'.format(i))
+                time.sleep(1.5)
+                continue
+            else:
+                print('[OK] LURE CAST FOUND')
+                return(True)
+        break
 
 # Checks if a bait is attached
 def check_bait():
