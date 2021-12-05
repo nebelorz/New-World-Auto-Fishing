@@ -15,11 +15,11 @@ class settings():
 # KEY BINDINGS #
 ################
 class key_bindings():
-    JUMP         = 'space'
-    CHAT         = 'enter'
     REPAIR       = 'r'
     INTERACT     = 'e'
-    EQUIP_BAIT   = 'r'
+    MOVE_LEFT    = 'a'
+    MOVE_RIGHT   = 'd'
     FREE_LOOK    = 'alt'
     INVENTORY    = 'tab'
+    EQUIP_BAIT   = 'r'
     FISHING_MODE = 'f3'

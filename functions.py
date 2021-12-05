@@ -108,11 +108,7 @@ def set_bait():
 
 # Anti AFK
 def anti_afk():
-    pyDI.press((key_bindings.CHAT))
     time.sleep(0.25)
-    pyAG.write('/sit')
+    pyDI.press(key_bindings.MOVE_LEFT)
+    pyDI.press((key_bindings.MOVE_RIGHT))
     time.sleep(0.25)
-    pyDI.press((key_bindings.CHAT))
-    time.sleep(1.5)
-    pyDI.press((key_bindings.JUMP))
-    time.sleep(1.5)
