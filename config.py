@@ -22,4 +22,4 @@ class key_bindings():
     FREE_LOOK    = 'alt'
     INVENTORY    = 'tab'
     EQUIP_BAIT   = 'r'
-    FISHING_MODE = 'f3'
+    FISHING_MODE = 'f3' # Cannot be changed
