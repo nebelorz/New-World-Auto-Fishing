@@ -8,7 +8,7 @@ from config import settings
 LOOP_COUNT = 1
 REPAIR_COUNT = 0
 
-if check_window('New World') == True:
+if check_window('New World'):
     get_window('New World')
     cursor_to_center()
 
@@ -16,26 +16,27 @@ if check_window('New World') == True:
         if REPAIR_COUNT == settings.CASTS_TO_REPAIR:
             repair()
             REPAIR_COUNT = 0
-        elif check_afk() == True:
+        elif check_afk():
             anti_afk()
+        elif check_group_invite() and settings.REJECT_GROUP:
+            reject_group()
         else:
             time_stamp(LOOP_COUNT)
 
-            if check_drawn_pole() == False:
+            if not check_drawn_pole():
                 enter_fishing_stance()
 
-            if settings.SET_BAIT == True and check_bait() == True:
+            if settings.SET_BAIT and check_bait():
                 set_bait()
-        
-            cast_fishing(settings.CAST_STRENGTH)
-            
-            if check_cast_fishing() == True:
-                catch_fish()
-                pick_up_reel()
-                 
-                REPAIR_COUNT += 1
-                LOOP_COUNT += 1
-                casts_left_to_repair(settings.CASTS_TO_REPAIR, REPAIR_COUNT)
-                continue
-            else:
-                continue
+
+            if check_drawn_pole():
+                cast_fishing(settings.CAST_STRENGTH)
+                        
+                if check_lure_landed():
+                    catch_fish()
+                    pick_up_reel()
+                    
+                    REPAIR_COUNT += 1
+                    LOOP_COUNT += 1
+                    casts_left_to_repair(settings.CASTS_TO_REPAIR, REPAIR_COUNT)
+                    continue

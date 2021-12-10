@@ -1,5 +1,12 @@
 import time
+import pyautogui as pyAG
 import pygetwindow as pyGW
+
+# Screen dimmensions
+screen_width, screen_height = pyAG.size()
+
+def cursor_to_center():
+    pyAG.moveTo(screen_width/2, screen_height/2)
 
 def check_window(self):
     try:

@@ -1,4 +1,5 @@
 import random
+from subprocess import CREATE_NEW_CONSOLE
 
 
 ####################
@@ -10,6 +11,9 @@ class settings():
 
     SET_BAIT = None     # None -- Will skip attaching a bait
                         # True -- Will attach a bait everytime it expires
+
+    REJECT_GROUP = False # True  -- Auto reject group invites
+                         # False -- Skip this function
 
 ################
 # KEY BINDINGS #
@@ -23,3 +27,4 @@ class key_bindings():
     INVENTORY    = 'tab'
     EQUIP_BAIT   = 'r'
     FISHING_MODE = 'f3' # Cannot be changed
+    REJECT_GROUP = 'f2' # Cannot be changed
