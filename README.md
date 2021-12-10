@@ -36,8 +36,9 @@ The images have been taken on 1920*1080, so you should use the same resolution t
 
 ## How does it work?
 
-### 🔴 Get Started
-Simply reach at your favorite fishing spot, with a fishing rod equipped, enough repair parts and run the program.
+### 🚀 Get Started
+Get your fishing rod, baits and enough repair parts and head to your favorite fishing spot.  
+Set up your settings in config.py and run the program!
 
 ### 🔴 Console LOG
 Launching the program executing "console.bat" is highly recommended, as it displays useful information like timestamp, how many loops made so far, casts until next repair and successfully completion or error of steps.
