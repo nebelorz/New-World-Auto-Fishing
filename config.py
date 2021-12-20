@@ -1,5 +1,4 @@
 import random
-from subprocess import CREATE_NEW_CONSOLE
 
 
 ####################
@@ -7,13 +6,16 @@ from subprocess import CREATE_NEW_CONSOLE
 ####################
 class settings():
     CAST_STRENGTH = random.uniform(1.7, 1.9)    # (1.9, 1.9) to always land MAX)
-    CASTS_TO_REPAIR = 60                        # Casts until the fishing rod is repaired
+    LOOPS_TO_REPAIR = 10                        # Loops until the fishing rod is repaired
 
-    SET_BAIT = None     # None -- Will skip attaching a bait
-                        # True -- Will attach a bait everytime it expires
-
-    REJECT_GROUP = False # True  -- Auto reject group invites
-                         # False -- Skip this function
+    SET_BAIT = False     # True  -- Will attach a bait everytime it expires
+                         # False -- Skips attaching baits
+    
+    RECONNECT = True     # True  -- Reconnects when disconnection is detetced
+                         # False -- Skips reconnection attempts
+                        
+    REJECT_GROUP = False    # True  -- Auto reject group invites
+                            # False -- Skips rejecting group invites
 
 ################
 # KEY BINDINGS #
@@ -26,5 +28,5 @@ class key_bindings():
     FREE_LOOK    = 'alt'
     INVENTORY    = 'tab'
     EQUIP_BAIT   = 'r'
-    FISHING_MODE = 'f3' # Cannot be changed
     REJECT_GROUP = 'f2' # Cannot be changed
+    FISHING_MODE = 'f3' # Cannot be changed

@@ -5,8 +5,8 @@ import pygetwindow as pyGW
 # Screen dimmensions
 screen_width, screen_height = pyAG.size()
 
-def cursor_to_center():
-    pyAG.moveTo(screen_width/2, screen_height/2)
+def cursor_to_screen():
+    pyAG.moveTo(screen_width/2, screen_height/3)
 
 def check_window(self):
     try:

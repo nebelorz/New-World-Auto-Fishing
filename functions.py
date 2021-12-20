@@ -5,31 +5,34 @@ import pydirectinput as pyDI
 from get_window import *
 from check_functions import *
 from config import key_bindings
+from reconnect import check_disconnection
 
-def time_stamp(self):
+
+def loop_stamp(loop, tchests):
     t = time.localtime()
     current_time = time.strftime('%H:%M', t)
-    print("\n//", current_time, "LOOP#", self, "//")
+    
+    #prints TIME, LOOPnumber and TREASURE CHESTScount
+    print("\n// [" + current_time + "]", "LOOP #" + str(loop), "||", "T-CHESTS: " + str(tchests), "\\\\")
     time.sleep(0.25)
 
 # Prints casts left to the next repair function
-def casts_left_to_repair(casts_repair, casts_count):
-    if (casts_repair - casts_count != 0):
-        print('[INFO] Casts until next repair: ', (casts_repair - casts_count))
+def loops_to_repair(loops_repair, loop_count):
+    if (loops_repair - loop_count) != 0:
+        print('[INFO] LOOPS UNTIL NEXT REPAIR:', (loops_repair - loop_count))
 
-# Change to "fishing stance"
+# Enter "fishing stance"
 def enter_fishing_stance():
     pyDI.press((key_bindings.FISHING_MODE))
     time.sleep(1.25)
 
 # Casts the fishing pole
 def cast_fishing(self):
-    time.sleep(0.25)
-    pyDI.mouseDown(button='left')
+    pyDI.mouseDown()
     time.sleep(self)
-    pyDI.mouseUp(button='left')
+    pyDI.mouseUp()
 
-# Waits until a fish is caught
+# Waits until a fish bites the hook
 def catch_fish():
     while check_lure_onscreen():
         continue
@@ -37,7 +40,7 @@ def catch_fish():
 
     for i in range(10):
         if check_reel_on_screen():
-            print('[OK] FISH CAUGHT')
+            print('[OK] FISH HOOKED')
             break
     
     if not check_reel_on_screen():
@@ -45,33 +48,33 @@ def catch_fish():
 
 # Pickups the reel
 def pick_up_reel():
-    while True:
-        pyDI.keyDown((key_bindings.FREE_LOOK))
-        f3_shown = pyAG.locateOnScreen('images/f3_fishing.png', region=(650, 450, int(screen_width/2), int(screen_height/2)), confidence = 0.9, grayscale = True)
-        max_reel = pyAG.locateOnScreen('images/max_reel.png', confidence = 0.9, grayscale = True)
-
-        if f3_shown != None:
-            pyDI.keyUp((key_bindings.FREE_LOOK))
-            time.sleep(0.5)
+    pyDI.keyDown((key_bindings.FREE_LOOK))
+    while True:        
+        if check_start() != None:
             break
-        elif check_reel_on_screen() == False:
+        elif not check_reel_on_screen():
             pyDI.click()
-            time.sleep(0.5)
+            time.sleep(0.25)
             continue
-        elif max_reel != None:
-            pyDI.mouseDown()
-            continue
-        elif max_reel == None:
-            pyDI.mouseUp()
-            time.sleep(0.5)
-            continue
+
+        while check_reel_on_screen() and not check_disconnection():
+            can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
+            if can_reel != None:
+                pyDI.mouseDown()
+                continue
+            if can_reel == None:
+                pyDI.mouseUp()
+                break
+        continue
+    
+    pyDI.keyUp((key_bindings.FREE_LOOK))
 
 # Repair the fishing pole
 def repair():
     time.sleep(0.5)
     pyDI.press(key_bindings.INVENTORY)
     time.sleep(0.5)
-    position = pyAG.locateCenterOnScreen('images/f3_inventory.png', confidence = 0.7, grayscale = True)
+    position = pyAG.locateCenterOnScreen('images/f3_inventory.png', region=(650, 600, int(screen_width/4), int(screen_height/4)), confidence = 0.7, grayscale = True)
 
     if position != None:
         pyDI.moveTo((position[0] - 50), position[1]) #mouse to rod slot
@@ -85,14 +88,14 @@ def repair():
         time.sleep(1)
         print('[OK] FISHING POLE REPAIRED')
     else:
-        print('[ERROR] Fishing pole not detected (?)')
+        print('[ERROR] FISHING POLE NOT DETECTED (?)')
 
 # Sets a bait
 def set_bait():
     if check_bait():
         try:
             pyDI.press(key_bindings.EQUIP_BAIT)
-            bait_pos = pyAG.locateCenterOnScreen('images/esc_bait_menu.png', confidence = 0.7, grayscale = True)
+            bait_pos = pyAG.locateCenterOnScreen('images/esc_bait_menu.png', region=(950, 100, int(screen_width/3), int(screen_height/3)), confidence = 0.7, grayscale = True)
             time.sleep(0.5)
             pyDI.moveTo(int(bait_pos[0]) + 10, int(bait_pos[1]) + 210)
             time.sleep(0.5)
@@ -106,7 +109,7 @@ def set_bait():
             if settings.SET_BAIT:
                 print('[OK] BAIT ATTACHED')
         except:
-            print('[ERROR] Cannot attach a bait (?), will try again on the next loop.')
+            print('[ERROR] CANNOT ATTACH A BAIT (?), WILL TRY AGAIN ON THE NEXT LOOP.')
             time.sleep(1)
 
 # Anti AFK
@@ -124,5 +127,5 @@ def anti_afk():
 # Reject group invite
 def reject_group():
     pyDI.press(key_bindings.REJECT_GROUP)
-    print('[INFO] Group rejected.')
+    print('[INFO] GROUP REJECTED.')
     time.sleep(0.75)

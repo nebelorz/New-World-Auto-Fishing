@@ -10,7 +10,7 @@
 
 New-World-Auto-Fishing is a fully automatic program to fish in New World, using image recognition and mouse/keyboard inputs.
 
-This program is strictly developed for *educational purposes and own research*; it violates [NW GTU / Code of Conduct](https://www.newworld.com/en-us/legal) and **you shouldn't use it on AGS New World live servers**.
+This program is strictly developed for *educational purposes and own research*; it violates [New World ToU / Code of Conduct](https://www.newworld.com/en-us/legal) and **you shouldn't use it on AGS New World live servers**.
 
 <div>
   <kbd>
@@ -20,12 +20,14 @@ This program is strictly developed for *educational purposes and own research*; 
 </div>
 
 ## Features
+- Bait setter
+- Reconnection
+- Custom cast distance
 - Anti AFK disconnection
-- Cast to custom distance
-- Equip a bait when it's expired
 - Skip the "uncommon fish" animation
 - Repair at custom number of casts
 - Reject group invites
+- Treasure Chests counter
 - Reel the most effective way possible
 
 ## Prerequisites
@@ -41,16 +43,15 @@ Get your fishing rod, baits and enough repair parts and head to your favorite fi
 Set up your settings in config.py and run the program!
 
 ### 🔴 Console LOG
-Launching the program executing "console.bat" is highly recommended, as it displays useful information like timestamp, how many loops made so far, casts until next repair and successfully completion or error of steps.
-
-If you want the console to be on top, use [AutoHotkey](https://www.autohotkey.com/) or any of [these](https://www.howtogeek.com/196958/the-3-best-ways-to-make-a-window-always-on-top-on-windows/) methods. 
+Launching the program executing "console.py" is highly recommended, as it displays useful information like timestamp, how many loops made so far, casts until next repair and successfully completion or error of steps.
+The console will stay always on top of everything else.
 
 ### 🔴 Anti-AFK
 Will move left and right, back to original position, so beware not to be standing on a little spot from which you can fall.
 
-### 🔴 Bait Function
-Equips a bait everytime it expires, and always equips the first bait on the baits menu.  
-It stops automatically whenever you don't have baits left.
+### 🔴 Bait Usage
+Equips a bait everytime it expires, and always equips the first one on the baits menu.  
+It stops automatically whenever you run out of baits.
 
 ### 🔴 Key Bindings
 The key bindings in-game are set to default, you can change them at "config.py" file.  
