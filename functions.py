@@ -49,7 +49,7 @@ def catch_fish():
 # Pickups the reel
 def pick_up_reel():
     pyDI.keyDown((key_bindings.FREE_LOOK))
-    while True:        
+    while not check_disconnection():        
         if check_start() != None:
             break
         elif not check_reel_on_screen():

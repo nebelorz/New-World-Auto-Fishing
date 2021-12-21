@@ -21,7 +21,7 @@ This program is strictly developed for *educational purposes and own research*; 
 
 ## Features
 - Bait setter
-- Reconnection
+- Reconnection *(BETA)*
 - Custom cast distance
 - Anti AFK disconnection
 - Skip the "uncommon fish" animation

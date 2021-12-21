@@ -9,7 +9,6 @@ LOOP_COUNT = 1
 REPAIR_COUNT = 0
 TCHESTS_COUNT = 0
 
-PAUSED = False
 
 if check_window('New World'):
     get_window('New World')
@@ -23,8 +22,8 @@ if check_window('New World'):
             repair()
             REPAIR_COUNT = 0
 
-        #elif check_afk():
-            #anti_afk()
+        elif check_afk():
+            anti_afk()
 
         elif check_group_invite() and settings.REJECT_GROUP:
             reject_group()
