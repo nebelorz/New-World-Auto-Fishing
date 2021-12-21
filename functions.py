@@ -57,7 +57,7 @@ def pick_up_reel():
             time.sleep(0.25)
             continue
 
-        while check_reel_on_screen() and not check_disconnection():
+        while check_reel_on_screen():
             can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
             if can_reel != None:
                 pyDI.mouseDown()
@@ -73,8 +73,8 @@ def pick_up_reel():
 def repair():
     time.sleep(0.5)
     pyDI.press(key_bindings.INVENTORY)
-    time.sleep(0.5)
-    position = pyAG.locateCenterOnScreen('images/f3_inventory.png', region=(650, 600, int(screen_width/4), int(screen_height/4)), confidence = 0.7, grayscale = True)
+    time.sleep(1)
+    position = pyAG.locateCenterOnScreen('images/f3_inventory.png', region=(650, 500, int(screen_width/4), int(screen_height/4)), confidence = 0.7, grayscale = True)
 
     if position != None:
         pyDI.moveTo((position[0] - 50), position[1]) #mouse to rod slot
@@ -95,8 +95,9 @@ def set_bait():
     if check_bait():
         try:
             pyDI.press(key_bindings.EQUIP_BAIT)
-            bait_pos = pyAG.locateCenterOnScreen('images/esc_bait_menu.png', region=(950, 100, int(screen_width/3), int(screen_height/3)), confidence = 0.7, grayscale = True)
             time.sleep(0.5)
+            bait_pos = pyAG.locateCenterOnScreen('images/esc_bait_menu.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.7, grayscale = True)
+            time.sleep(1.5)
             pyDI.moveTo(int(bait_pos[0]) + 10, int(bait_pos[1]) + 210)
             time.sleep(0.5)
             pyDI.click()

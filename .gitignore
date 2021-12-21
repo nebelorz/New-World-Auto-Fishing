@@ -1,2 +1,5 @@
-# Ignore pycache
+# cache
 __pycache__/
+
+# .py files
+test.py

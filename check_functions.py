@@ -4,7 +4,6 @@ import pydirectinput as pyDI
 
 from get_window import *
 from config import settings
-from reconnect import check_disconnection
 
 # Checks f3 to start
 def check_start():
@@ -14,13 +13,13 @@ def check_start():
 
 # Checks if a bait is attached
 def check_bait():
-    no_bait = pyAG.locateOnScreen('images/no_bait_equipped.png', region=(650, 450, int(screen_width/2), int(screen_height/2)),confidence = 0.8, grayscale = True)
+    no_bait = pyAG.locateOnScreen('images/no_bait_equipped.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.8, grayscale = True)
     if no_bait != None:
         return(True)
 
 # Checks if there're baits left
 def check_baits_left():
-    no_baits_left = pyAG.locateOnScreen('images/no_baits_left.png', region=(750, 500, int(screen_width/2), int(screen_height/2)), confidence = 0.9, grayscale = True)
+    no_baits_left = pyAG.locateOnScreen('images/no_baits_left.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.9, grayscale = True)
     if no_baits_left != None:
         settings.SET_BAIT = False
         print('[INFO] NO BAITS LEFT - BAITS WILL NO LONGER BE ATTACHED')
