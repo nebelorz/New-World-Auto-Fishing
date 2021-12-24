@@ -3,6 +3,7 @@ import pydirectinput as pyDI
 
 from get_window import *
 
+## VARIABLES
 STEP_1_NAME = 'ok_button'
 STEP_1_NUM = 1
 
@@ -31,8 +32,8 @@ def check_disconnection_step(self):
         return(True)
 
 # Click function
-def disconnection_step(step_name):
-    button = pyAG.locateCenterOnScreen('images/reconnect/{}.png'.format(step_name), confidence = 0.7, grayscale = True)
+def disconnection_step(self):
+    button = pyAG.locateCenterOnScreen('images/reconnect/{}.png'.format(self), confidence = 0.7, grayscale = True)
     pyDI.moveTo(int(button[0]), int(button[1]))
     pyDI.click()
 

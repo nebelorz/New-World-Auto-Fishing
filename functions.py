@@ -49,22 +49,27 @@ def catch_fish():
 # Pickups the reel
 def pick_up_reel():
     pyDI.keyDown((key_bindings.FREE_LOOK))
-    while not check_disconnection():        
+    while True:        
         if check_start() != None:
             break
+
         elif not check_reel_on_screen():
             pyDI.click()
             time.sleep(0.25)
             continue
 
-        while check_reel_on_screen():
-            can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
-            if can_reel != None:
-                pyDI.mouseDown()
-                continue
-            if can_reel == None:
-                pyDI.mouseUp()
-                break
+        elif check_disconnection() != None:
+            break
+
+        elif check_reel_on_screen():
+            for i in range(40):
+                can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
+                if can_reel != None:
+                    pyDI.mouseDown()
+                    continue
+                if can_reel == None:
+                    pyDI.mouseUp()
+                    break
         continue
     
     pyDI.keyUp((key_bindings.FREE_LOOK))
@@ -97,7 +102,7 @@ def set_bait():
             pyDI.press(key_bindings.EQUIP_BAIT)
             time.sleep(0.5)
             bait_pos = pyAG.locateCenterOnScreen('images/esc_bait_menu.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.7, grayscale = True)
-            time.sleep(1.5)
+            time.sleep(0.5)
             pyDI.moveTo(int(bait_pos[0]) + 10, int(bait_pos[1]) + 210)
             time.sleep(0.5)
             pyDI.click()

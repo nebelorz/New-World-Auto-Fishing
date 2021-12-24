@@ -2,7 +2,6 @@
     <p align="center">
     <img src="https://i.imgur.com/BMMIgXm.png"
     width=700 />
-    </p>
 </div>
 
 ---
@@ -14,7 +13,7 @@ This program is strictly developed for *educational purposes and own research*; 
 
 <div>
   <kbd>
-    <img src="https://i.imgur.com/hKSGdZr.png"
+    <img src="https://i.imgur.com/XIP2Fgg.png"
     width=800/>
   </kbd>
 </div>
@@ -38,22 +37,43 @@ The images have been taken on 1920*1080, so you should use the same resolution t
 
 ## How does it work?
 
-### 🚀 Get Started
+### 🟣 Getting Started
 Get your fishing rod, baits and enough repair parts and head to your favorite fishing spot.  
-Set up your settings in config.py and run the program!
+Set up your settings in config.py and run the program.
 
-### 🔴 Console LOG
-Launching the program executing "console.py" is highly recommended, as it displays useful information like timestamp, how many loops made so far, casts until next repair and successfully completion or error of steps.
+Launching the program ***double clicking "console.py" is highly recommended***, as it displays useful information like timestamp, loops made so far, successfully completion or error of steps etc.
 The console will stay always on top of everything else.
 
-### 🔴 Anti-AFK
+**The following points have to be considered in order to understand how all the features work.**
+
+### 🟡 Reeling
+As the program uses image recognition, keep the images on screen clear to be detected correctly and not trigger any errors.
+
+<div>
+  <p align="center">
+  <kbd>
+    <img src="https://i.imgur.com/NFh8Jtm.png"
+    width=500>
+  </kbd>
+</div>
+
+### 🟡 Bait
+Equips a bait everytime it expires, and *always equips the first one on the baits menu*.  
+It stops automatically when you run out of baits.
+
+### 🟡 Anti-AFK
 Will move left and right, back to original position, so beware not to be standing on a little spot from which you can fall.
 
-### 🔴 Bait Usage
-Equips a bait everytime it expires, and always equips the first one on the baits menu.  
-It stops automatically whenever you run out of baits.
+### 🟡 Reconnection (BETA)
+The reconnection will be checked at the start of the loop, if it's true, the program will recognize in which step it is and then begin to reconnect.
 
-### 🔴 Key Bindings
+In order to get a succesful reconnection, the program looks for the backpack icon on screen  
+<kbd>
+  <img src="https://i.imgur.com/H2BftgY.png"
+  width=55>
+</kbd>
+
+### 🟣 Key Bindings
 The key bindings in-game are set to default, you can change them at "config.py" file.  
 ~~~
 E       -> Interact  
