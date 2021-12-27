@@ -37,7 +37,7 @@ The images have been taken on 1920*1080, so you should use the same resolution t
 
 ## How does it work?
 
-### 🟣 Getting Started
+### 🟢 Getting Started
 Get your fishing rod, baits and enough repair parts and head to your favorite fishing spot.  
 Set up your settings in config.py and run the program.
 
@@ -73,7 +73,7 @@ In order to get a succesful reconnection, the program looks for the backpack ico
   width=55>
 </kbd>
 
-### 🟣 Key Bindings
+### 🔴 Key Bindings
 The key bindings in-game are set to default, you can change them at "config.py" file.  
 ~~~
 E       -> Interact  
