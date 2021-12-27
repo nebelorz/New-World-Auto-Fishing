@@ -1,27 +1,32 @@
 import random
 
 
-####################
-# GENERAL SETTINGS #
-####################
-class settings():
-    CAST_STRENGTH = random.uniform(1.7, 1.9)    # (1.9, 1.9) to always land MAX)
-    LOOPS_TO_REPAIR = 60                        # Loops until the fishing rod is repaired
+# # # # # # # # # # # # # # # # # # #
+#  G E N E R A L   S E T T I N G S  #
+# # # # # # # # # # # # # # # # # # #
 
-    SET_BAIT = False        # True  -- Will attach a bait everytime it expires
+class Settings():
+    CAST_STRENGTH = random.uniform(1.7, 1.9) # (1.9, 1.9) to always land MAX)
+    LOOPS_TO_REPAIR = 300                     # Loops until the fishing rod is repaired
+
+    SET_BAIT = True         # True  -- Will attach a bait everytime it expires
                             # False -- Skips attaching baits
                             
-    REJECT_GROUP = False    # True  -- Auto reject group invites
+    REJECT_GROUP = True     # True  -- Auto reject group invites
                             # False -- Skips rejecting group invites
 
     # FUNCTION IN BETA
-    RECONNECT = False       # True  -- Reconnects when disconnection is detetced
+    RECONNECT = True        # True  -- Reconnects when disconnection is detected
                             # False -- Skips reconnection attempts
 
-################
-# KEY BINDINGS #
-################
-class key_bindings():
+
+
+
+# # # # # # # # # # # # # # #
+#  K E Y  B I N D I N G S   #
+# # # # # # # # # # # # # # #
+
+class KeyBindings():
     REPAIR       = 'r'
     INTERACT     = 'e'
     MOVE_LEFT    = 'a'

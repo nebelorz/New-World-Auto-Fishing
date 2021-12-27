@@ -2,8 +2,7 @@ import time
 import pyautogui as pyAG
 import pygetwindow as pyGW
 
-# Screen dimmensions
-screen_width, screen_height = pyAG.size()
+screen_width, screen_height = pyAG.size() # Screen dimmensions
 
 def cursor_to_screen():
     pyAG.moveTo(screen_width/2, screen_height/3)
