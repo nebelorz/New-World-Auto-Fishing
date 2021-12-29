@@ -36,7 +36,7 @@ def disconnection_step(self): # Clicks on designed step button
 
 def wait_next_step(self):
     if not check_disconnection_step('{}'.format(self)):
-        time.sleep(2)
+        time.sleep(1)
 
 def reconnect():
     print('-[ DISCONNECTION DETECTED ]-')

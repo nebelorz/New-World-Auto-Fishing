@@ -25,6 +25,7 @@ This program is strictly developed for *educational purposes and own research*; 
 - Anti AFK disconnection
 - Skip the "uncommon fish" animation
 - Repair at custom number of casts
+- Hotkeys to pause/resume
 - Reject group invites
 - Treasure Chests counter
 - Reel the most effective way possible
@@ -84,4 +85,8 @@ TAB     -> Inventory
 leftALT -> Free look (lock the POV)
 F2      -> Reject group invite  (cannot be modified) 
 F3      -> Switch to "fishing stance" (cannot be modified) 
+
+
+HOME    -> Resume
+END     -> Pause
 ~~~

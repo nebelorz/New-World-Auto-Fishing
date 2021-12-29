@@ -12,7 +12,7 @@ def check_start(): # Checks F3 on screen to start the loop
         return(True)
 
 def check_bait_attached():
-    no_bait = pyAG.locateOnScreen('images/no_bait_equipped.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.8, grayscale = True)
+    no_bait = pyAG.locateOnScreen('images/no_bait_equipped.png', region=(900, 0, int(screen_width/2), screen_height), confidence = 0.7, grayscale = True)
     if no_bait is not None:
         return(True)
 

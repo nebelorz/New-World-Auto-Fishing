@@ -1,3 +1,4 @@
+import hotkeys
 from functions import *
 from reconnect import *
 from get_window import *
@@ -9,13 +10,16 @@ loop_count = 1
 repair_count = 0
 tchests_count = 0
 
-
 if check_window('New World'):
     get_window('New World')
     cursor_to_screen()
 
     while True:
-        if check_disconnection() and Settings.RECONNECT:
+        if hotkeys.event_pause.is_set():
+            print('[HOTKEY] PROGRAM PAUSED')
+            hotkeys.event_resume.wait()
+
+        elif check_disconnection() and Settings.RECONNECT:
             reconnect()
 
         elif repair_count == Settings.LOOPS_TO_REPAIR:
