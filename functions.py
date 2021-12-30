@@ -32,14 +32,15 @@ def cast_fishing(self):
 
 def catch_fish(): # Waits until a fish bites the hook
     if check_lure_onscreen():
-        for i in range(60):
+        for i in range(400):
             if check_lure_onscreen():
                 continue
             else:
                 break
     pyDI.mouseDown()
+    time.sleep(0.25)
 
-    for i in range(10):
+    for i in range(20):
         if check_reel_on_screen():
             print('[OK] FISH HOOKED')
             break
@@ -49,7 +50,7 @@ def catch_fish(): # Waits until a fish bites the hook
 
 def pick_up_reel():
     pyDI.keyDown((KeyBindings.FREE_LOOK))
-    for i in range(60):        
+    for i in range(20):      
         if check_start() is not None:
             break
 
@@ -62,7 +63,7 @@ def pick_up_reel():
             break
 
         elif check_reel_on_screen():
-            for i in range(40):
+            for i in range(20):
                 can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
                 if can_reel is not None:
                     pyDI.mouseDown()
@@ -96,7 +97,7 @@ def repair(): # Repairs the fishing pole
         print('[ERROR] FISHING POLE NOT DETECTED (?)')
 
 def set_bait():
-    if check_bait_attached():
+    if check_no_bait_attached():
         try:
             pyDI.press(KeyBindings.EQUIP_BAIT)
             time.sleep(0.5)
@@ -114,7 +115,7 @@ def set_bait():
             if Settings.SET_BAIT:
                 print('[OK] BAIT ATTACHED')
         except:
-            print('[ERROR] CANNOT ATTACH A BAIT (?), WILL TRY AGAIN ON THE NEXT LOOP.')
+            print('[ERROR] CANNOT ATTACH A BAIT (?), WILL TRY AGAIN ON THE NEXT LOOP')
             time.sleep(1)
 
 def anti_afk():
@@ -130,5 +131,5 @@ def anti_afk():
 
 def reject_group():
     pyDI.press(KeyBindings.REJECT_GROUP)
-    print('[INFO] GROUP REJECTED.')
+    print('[INFO] GROUP REJECTED')
     time.sleep(0.75)
