@@ -1,6 +1,7 @@
 import subprocess
 import win32gui
 import win32con
+import time
 
 
 subprocess.Popen('cmd')
@@ -12,4 +13,5 @@ win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 500, 250, win32con.SWP_
 
 
 subprocess.call('cls', shell=True)
+time.sleep(0.5)
 subprocess.call('python main.py', shell=True)
