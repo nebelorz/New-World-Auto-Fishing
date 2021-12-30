@@ -6,7 +6,8 @@ import random
 # # # # # # # # # # # # # # # # # # #
 class Settings():
     CAST_STRENGTH = random.uniform(1.7, 1.9) # (1.9, 1.9) to always land MAX)
-    LOOPS_TO_REPAIR = 300                    # Loops until the fishing rod is repaired
+
+    LOOPS_TO_REPAIR = 300   # Loops until the fishing rod is repaired
 
     SET_BAIT = True         # True  -- Will attach a bait everytime it expires
                             # False -- Skips attaching baits
