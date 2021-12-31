@@ -1,3 +1,4 @@
+import time
 import pyautogui as pyAG
 import pydirectinput as pyDI
 
