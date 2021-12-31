@@ -51,7 +51,7 @@ def catch_fish(): # Waits until a fish bites the hook
 
 def pick_up_reel():
     pyDI.keyDown((KeyBindings.FREE_LOOK))
-    for i in range(20):      
+    for i in range(20):   
         if check_start():
             break
 
@@ -65,7 +65,7 @@ def pick_up_reel():
 
         elif check_reel_on_screen():
             for i in range(120):
-                can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.9, grayscale = True)
+                can_reel = pyAG.locateOnScreen('images/can_reel.png', confidence = 0.8, grayscale = True)
                 if can_reel is not None:
                     pyDI.mouseDown()
 

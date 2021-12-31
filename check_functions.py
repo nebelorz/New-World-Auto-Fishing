@@ -24,7 +24,7 @@ def check_baits_left():
 
 def check_lure_landed():
     time.sleep(3)
-    for i in range(3):
+    for i in range(2):
         if not check_lure_onscreen():
             print('... waiting to land the line ...')
             time.sleep(1.5)
@@ -43,7 +43,7 @@ def check_lure_onscreen():
         return(True)
 
 def check_reel_on_screen():
-    reel_on_screen = pyAG.locateOnScreen('images/reel_on_screen.png', confidence = 0.8, grayscale = True)
+    reel_on_screen = pyAG.locateOnScreen('images/reel_on_screen.png', confidence = 0.85, grayscale = True)
     if reel_on_screen is not None:
         return(True)
 
