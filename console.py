@@ -13,4 +13,4 @@ win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 500, 250, win32con.SWP_
 
 
 subprocess.call('cls', shell=True)
-subprocess.call('python main.py', shell=True)
+subprocess.call('python .\main.py', shell=True)
