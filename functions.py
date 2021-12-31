@@ -45,6 +45,7 @@ def catch_fish(): # Waits until a fish bites the hook
             print('[OK] FISH HOOKED')
             break
     
+    time.sleep(0.25)
     if not check_reel_on_screen():
         print('[ERROR] UNSUCCESSFUL ATTEMPT')
 
@@ -54,7 +55,8 @@ def pick_up_reel():
         if check_start() is not None:
             break
 
-        elif not check_reel_on_screen():
+        elif not check_reel_on_screen() and not check_start():
+            print('click')
             pyDI.click()
             time.sleep(0.25)
             continue
@@ -68,7 +70,7 @@ def pick_up_reel():
                 if can_reel is not None:
                     pyDI.mouseDown()
                     continue
-                if can_reel is None:
+                else:
                     pyDI.mouseUp()
                     break
         continue
