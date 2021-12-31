@@ -90,3 +90,6 @@ F3      -> Switch to "fishing stance" (cannot be modified)
 HOME    -> Resume
 END     -> Pause
 ~~~
+
+
+[<img alt='DonateButton' width='250px' src='https://i.imgur.com/8sr6feS.png'/>](https://www.paypal.com/donate/?hosted_button_id=6HDWEU7U7ZYNN)
