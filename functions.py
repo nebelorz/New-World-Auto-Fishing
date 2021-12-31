@@ -56,7 +56,6 @@ def pick_up_reel():
             break
 
         elif not check_reel_on_screen() and not check_start():
-            print('click')
             pyDI.click()
             time.sleep(0.25)
             continue
