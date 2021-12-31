@@ -32,7 +32,7 @@ This program is strictly developed for *educational purposes and own research*; 
 
 ## Prerequisites
 You'll need [Python3](https://www.python.org/downloads/) to run.  
-You'll need [pyAutoGUI](https://pypi.org/project/PyAutoGUI/), [pyDirectInput](https://pypi.org/project/PyDirectInput/) and [pyGetWindow](https://pypi.org/project/PyGetWindow/) Python libraries.
+You'll need [pyAutoGUI](https://pypi.org/project/PyAutoGUI/) and [pyDirectInput](https://pypi.org/project/PyDirectInput/) Python libraries.
 
 The images have been taken on 1920*1080, so you should use the same resolution to avoid any errors.
 
