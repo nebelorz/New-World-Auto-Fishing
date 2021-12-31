@@ -18,6 +18,8 @@ if check_window('New World'):
         if hotkeys.event_pause.is_set():
             print('[HOTKEY] PROGRAM PAUSED')
             hotkeys.event_resume.wait()
+            get_window('New World')
+            cursor_to_screen()
 
         elif Settings.RECONNECT and check_disconnection():
             reconnect()
